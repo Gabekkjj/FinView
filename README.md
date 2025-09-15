@@ -48,7 +48,7 @@ A aplicação segue uma arquitetura MVC adaptada, onde:
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+##  Como Executar o Projeto Localmente
 
 Siga os passos abaixo para rodar o FinView na sua máquina.
 
