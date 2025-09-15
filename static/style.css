@@ -1,0 +1,195 @@
+/* 1. Variáveis de Cor e Fontes (Tema Neon-Tech) */
+:root {
+    --color-background: #0d1117; /* Azul petróleo super escuro */
+    --color-surface: #161b22;   /* Grafite para cards */
+    --color-border: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-cyan: #39c5f7;
+    --accent-cyan-glow: rgba(57, 197, 247, 0.3);
+    --accent-magenta: #ff79c6;
+    --success: #56d364;
+    --danger: #f85149;
+    --font-body: 'Poppins', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+/* 2. Estilos Globais */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 3. Header e Navegação */
+.main-header {
+    background-color: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    margin-bottom: 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+.main-header nav { display: flex; align-items: center; gap: 1rem; }
+.user-email { color: var(--text-secondary); font-size: 0.9rem; }
+
+/* 4. Botões */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.btn-primary { 
+    color: #fff; 
+    background-color: var(--accent-cyan); 
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+.btn-primary:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--accent-cyan-glow);
+}
+.btn-secondary { 
+    color: var(--text-primary); 
+    background-color: var(--color-surface-light); 
+    border-color: var(--color-border); 
+}
+.btn-secondary:hover { 
+    background-color: var(--color-border); 
+    border-color: var(--text-secondary);
+}
+
+/* 5. Cards e Layout do Dashboard */
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.summary-cards h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.summary-cards p {
+    font-family: var(--font-mono);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.valor-receita { color: var(--success); }
+.valor-despesa { color: var(--danger); }
+.valor-saldo { color: var(--text-primary); }
+
+/* 6. Tabela */
+.lancamentos-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.lancamentos-table th, .lancamentos-table td {
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+.lancamentos-table thead th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.lancamentos-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+.lancamentos-table tbody tr:hover {
+    background-color: #21262d; /* Um pouco mais claro que o fundo do card */
+}
+.lancamentos-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.text-right { text-align: right !important; font-family: var(--font-mono); }
+.badge {
+    padding: 0.3em 0.8em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tipo-receita { background-color: var(--success); }
+.tipo-despesa { background-color: var(--accent-magenta); }
+
+/* 7. Formulários */
+.form-container {
+    background-color: var(--color-surface);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    max-width: 500px;
+    margin: 2rem auto;
+}
+.form-container h2 { margin-top: 0; text-align: center; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-secondary); }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-background);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+.form-container .btn { width: 100%; margin-top: 1rem; }

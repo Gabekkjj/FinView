@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar Lançamento{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Adicionar Novo Lançamento</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" required>
+        </div>
+        <div class="form-group">
+            <label for="valor">Valor (R$)</label>
+            <input type="number" step="0.01" id="valor" name="valor" required>
+        </div>
+        <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <select id="tipo" name="tipo" required>
+                <option value="despesa">Despesa</option>
+                <option value="receita">Receita</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+        </div>
+        <button type="submit" class="btn">Salvar</button>
+        <a href="{{ url_for('dashboard') }}" class="btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
