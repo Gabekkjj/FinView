@@ -91,4 +91,3 @@ Siga os passos abaixo para rodar o FinView na sua máquina.
     python3 app.py
     ```
 
-6.  Abra seu navegador e acesse `http://127.0.0.1:5000`.
